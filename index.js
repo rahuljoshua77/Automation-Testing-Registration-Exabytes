@@ -52,7 +52,7 @@ const link = getLink.question("[*] Your Pastebin Link (raw): ")
         console.log(`[*] Trying to Fill Email ${email}`)
         await page.waitForSelector('#containerNewUserSignup #inputEmail')
         await page.type('#containerNewUserSignup #inputEmail',`${email}`)
-        
+
         console.log("[*] Trying to Fill Number Phone")
         await page.waitForSelector('#containerNewUserSignup #inputPhone')
         await page.type('#containerNewUserSignup #inputPhone',`${accountData.numberPhone}`)
