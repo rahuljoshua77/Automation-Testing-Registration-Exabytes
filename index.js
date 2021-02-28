@@ -37,10 +37,10 @@ const link = getLink.question("[*] Your Pastebin Link (raw): ")
         console.log("[*] Open https://billing.exabytes.co.id/register.php")
          
         await page.goto('https://billing.exabytes.co.id/register.php')
-        
+        await page.waitForTimeout(30500)
         await page.setViewport({ width: 1366, height: 695 })
          
-        await page.waitForTimeout(4000)
+        
         console.log("[*] Trying to Fill First Name")
         await page.waitForSelector('#containerNewUserSignup #inputFirstName')
         await page.type('#containerNewUserSignup #inputFirstName',`${accountData.firstName}`)
@@ -103,7 +103,6 @@ const link = getLink.question("[*] Your Pastebin Link (raw): ")
         await page.waitForSelector('#containerNewUserSignup #customfield811')
         await page.type('#containerNewUserSignup #customfield811',`${accountData.npwp}`)
         
-        await page.waitForTimeout(2000)
 
         console.log("[*] Trying to Fill Password")
         await page.waitForSelector('#containerNewUserSecurity > #containerPassword #inputNewPassword1')
@@ -134,10 +133,9 @@ const link = getLink.question("[*] Your Pastebin Link (raw): ")
         await page.waitForSelector('.col-md-9 > #registration > #frmCheckout > p > .btn')
         await page.click('.col-md-9 > #registration > #frmCheckout > p > .btn')
        
-        let element = await page.waitForSelector('.container > .row > .col-md-9 > .header-lined > h1')
-        await page.waitForTimeout(4000)
-        let value = await page.evaluate(el => el.textContent, element)
-        console.log(`[*] ${value}`)
+        // let element = await page.waitForSelector('.container > .row > .col-md-9 > .header-lined > h1')
+        // let value = await page.evaluate(el => el.textContent, element)
+        // console.log(`[*] ${value}`)
         console.log("[*] All Done, Boss!! Automation is Complete.")
     
         await browser.close() 
