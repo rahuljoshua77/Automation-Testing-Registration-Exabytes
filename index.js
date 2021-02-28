@@ -35,7 +35,7 @@ const link = getLink.question("[*] Your Pastebin Link (raw): ")
         console.clear()
         console.log(`[*] Automation Number: ${number++} | ${email}`)
         console.log("[*] Open https://billing.exabytes.co.id/register.php")
-         
+          
         await page.goto('https://billing.exabytes.co.id/register.php')
         await page.waitForTimeout(30500)
         await page.setViewport({ width: 1366, height: 695 })
