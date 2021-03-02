@@ -36,10 +36,10 @@ const link = getLink.question("[*] Your Pastebin Link (raw): ")
         console.log(`[*] Automation Number: ${number++} | ${email}`)
         console.log("[*] Open https://billing.exabytes.co.id/register.php")
           
-        await page.goto('https://billing.exabytes.co.id/register.php', { waitUntil: 'domcontentloaded'});
- 
+        await page.goto('https://billing.exabytes.co.id/register.php');
+        await page.waitForTimeout(30500)
         await page.setViewport({ width: 1366, height: 695 })
-         
+        
         
         console.log("[*] Trying to Fill First Name")
         await page.waitForSelector('#containerNewUserSignup #inputFirstName')
